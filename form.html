@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <title>User Form</title>
+</head>
+
+<body align ="center">
+    <fieldset style="text-align: center;">
+        <button id="add-user" onclick="showAddUser()" class="ui inverted primary button">Add New User</button>
+        <button id="view-user" onclick="showUsers()" class="ui inverted primary button">View Users</button>
+    </fieldset>
+
+    <h1 style="color: green; text-align: center; display: none;" id="user-added">User added successfully</h1>
+    <fieldset id="user-form">
+        <legend>Add User:</legend>
+        <div class="container">
+        <form onsubmit="return false;" method="POST" id="myForm" class="ui form">
+            <br>
+            <div class="three feilds">
+            <div class="ui purple horizontal label">Name</div>&nbsp&nbsp&nbsp<input type="text" name="name" 
+            placeholder="Enter your Name" id="uname"  class="form-control"><br><br><br></div>
+            <div class="feild">
+            <div class="ui purple horizontal label">Email</div>&nbsp&nbsp&nbsp<input type="text" name="email" 
+            placeholder="Enter your Email" id="email"  class="form-control"><br><br><br></div>
+                <div class="ui purple horizontal label">Password</div>&nbsp&nbsp&nbsp <input type="password"  class="form-control" name="pwd" placeholder="Create password" id="pwd" class="ui input"><br>
+               <p><i>Password Must be Alpha numeric and minimum 8 characters</i></p>
+            <div class="ui purple horizontal label">Confirm Password</div>&nbsp&nbsp&nbsp<input type="password" name="cpwd"  class="form-control" placeholder="confirm password" id="cpwd"><br><br><br>
+            <input type="submit" id="submit" onclick="addUser();" value="Add User" disabled="disabled" class="ui inverted primary button"/>
+            <input type="reset" value="Reset" class="ui inverted red button">
+            <input type="hidden" id="uid" value="">
+        </form>
+    </div>
+    </fieldset>
+
+    <fieldset id="users" style="display: none;">
+        <legend>Add User:</legend>
+        <table id="users">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </table>
+    </fieldset>
+    <script src="User.js">
+    
+    </script>
+</body>
+
+</html>
